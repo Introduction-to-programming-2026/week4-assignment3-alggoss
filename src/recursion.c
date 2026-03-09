@@ -18,3 +18,35 @@ Rules:
 - You cannot use a loop to print rows.
 - Base case must be correct.
 */
+
+#include <stdio.h>
+
+void printRow(int n)
+{
+    if (n == 0)
+        return;
+
+    printRow(n - 1);
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("#");
+    }
+    printf("\n");
+}
+
+int main(void)
+{
+    int n;
+
+    do
+    {
+        printf("Enter a positive integer: ");
+        scanf("%d", &n);
+    }
+    while (n < 1);
+
+    printRow(n);
+
+    return 0;
+}
